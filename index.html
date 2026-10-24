@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Product Inventory Dashboard</h1>
+    <p>Manage products and analyze inventory value</p>
+  </header>
+
+  <main>
+    <section class="analytics">
+      <div class="card">
+        <h3>Total Products</h3>
+        <p id="totalProducts">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Total Inventory Value</h3>
+        <p id="totalValue">$0</p>
+      </div>
+
+      <div class="card">
+        <h3>Affordable Products</h3>
+        <p id="affordableCount">0</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Add a Product</h2>
+
+      <form id="productForm">
+        <input
+          type="text"
+          id="productName"
+          placeholder="Product name"
+          required
+        >
+
+        <input
+          type="number"
+          id="productPrice"
+          placeholder="Product price"
+          min="0"
+          step="0.01"
+          required
+        >
+
+        <button type="submit">Add Product</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Inventory List</h2>
+
+      <label for="filter">Filter products:</label>
+      <select id="filter">
+        <option value="all">All Products</option>
+        <option value="affordable">Under $200</option>
+      </select>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+
+          <tbody id="inventoryBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Formatted Report</h2>
+      <ul id="reportList"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
